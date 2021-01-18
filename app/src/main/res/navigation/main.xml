@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/menuHome">
+
+    <fragment
+        android:id="@+id/menuHome"
+        android:name="com.jaysonjose.smartgreenhouse.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/menuSetting"
+        android:name="com.jaysonjose.smartgreenhouse.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/menuMonitoring"
+        android:name="com.jaysonjose.smartgreenhouse.MonitoringFragment"
+        android:label="Monitoring"
+        tools:layout="@layout/fragment_monitoring" />
+    <fragment
+        android:id="@+id/menuControl"
+        android:name="com.jaysonjose.smartgreenhouse.ControlFragment"
+        android:label="Control"
+        tools:layout="@layout/fragment_control" />
+    <fragment
+        android:id="@+id/menuStream"
+        android:name="com.jaysonjose.smartgreenhouse.StreamFragment"
+        android:label="Stream"
+        tools:layout="@layout/fragment_stream" />
+    <fragment
+        android:id="@+id/menuAccount"
+        android:name="com.jaysonjose.smartgreenhouse.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/menuAboutUs"
+        android:name="com.jaysonjose.smartgreenhouse.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/MenuLogout"
+        android:name="com.jaysonjose.smartgreenhouse.MainActivity"
+        android:label="Logout"
+        tools:layout="@layout/activity_main"/>
+</navigation>

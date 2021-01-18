@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MonitoringFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/topView"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@drawable/wave_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topView" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monitoring"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topView"
+            app:layout_constraintVertical_bias="0.213" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_temp"
+            style="@style/CircularDeterminateProgressBar"
+            android:layout_width="180dp"
+            android:layout_height="175dp"
+            android:layout_marginTop="192dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:progress="60" />
+
+        <TextView
+            android:id="@+id/text_view_progress_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_temp"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar_temp"
+            app:layout_constraintHorizontal_bias="0.546"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar_temp"
+            app:layout_constraintTop_toTopOf="@+id/progress_bar_temp"
+            tools:text="60 °" />
+
+        <EditText
+            android:id="@+id/value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="value"
+            android:inputType="number|textPersonName"
+            android:text="60"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/progress_bar_temp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp"
+            android:text="Temperature"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_temp"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar_temp"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar_temp"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_progress_temp"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_humid"
+            style="@style/CircularDeterminateProgressBar"
+            android:layout_width="180dp"
+            android:layout_height="175dp"
+            android:layout_marginTop="192dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:progress="60" />
+
+        <TextView
+            android:id="@+id/text_view_progress_humid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_humid"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar_humid"
+            app:layout_constraintHorizontal_bias="0.546"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar_humid"
+            app:layout_constraintTop_toTopOf="@+id/progress_bar_humid"
+            tools:text="60 %" />
+
+        <TextView
+            android:id="@+id/textView_humid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp"
+            android:text="@string/humidity"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_humid"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar_humid"
+            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar_humid"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_progress_humid"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_soil"
+            style="@style/CircularDeterminateProgressBar"
+            android:layout_width="180dp"
+            android:layout_height="175dp"
+            android:layout_marginEnd="172dp"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar_heat"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progress_bar_temp"
+            app:layout_constraintVertical_bias="0.729"
+            tools:progress="60" />
+
+        <TextView
+            android:id="@+id/text_view_progress_soil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_soil"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar_soil"
+            app:layout_constraintHorizontal_bias="0.546"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar_soil"
+            app:layout_constraintTop_toTopOf="@+id/progress_bar_soil"
+            tools:text="60 %" />
+
+        <TextView
+            android:id="@+id/textView_soil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp"
+            android:text="@string/soil_moisture"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_soil"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar_soil"
+            app:layout_constraintHorizontal_bias="0.532"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar_soil"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_progress_soil"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_heat"
+            style="@style/CircularDeterminateProgressBar"
+            android:layout_width="180dp"
+            android:layout_height="175dp"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progress_bar_temp"
+            app:layout_constraintVertical_bias="0.756"
+            tools:progress="60" />
+
+        <TextView
+            android:id="@+id/text_view_progress_heat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_heat"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar_heat"
+            app:layout_constraintHorizontal_bias="0.546"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar_heat"
+            app:layout_constraintTop_toTopOf="@+id/progress_bar_heat"
+            tools:text="60 %" />
+
+        <TextView
+            android:id="@+id/textView_heat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp"
+            android:text="@string/heat_index"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar_heat"
+            app:layout_constraintEnd_toEndOf="@+id/progress_bar_heat"
+            app:layout_constraintHorizontal_bias="0.5350"
+            app:layout_constraintStart_toStartOf="@+id/progress_bar_heat"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_progress_heat"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">smartGreenhouse</string>
+    <string name="title">SMART GREENHOUSE</string>
+    <string name="logoApp">Image Logo</string>
+    <string name="btnName">LOGIN</string>
+    <string name="forgot">Forgot Password?</string>
+    <string name="drawerName">Smart GreenHouse</string>
+    <string name="home">Home</string>
+    <string name="monitoring">Monitoring</string>
+    <string name="controller">Controller</string>
+    <string name="videoStream">Video Stream</string>
+    <string name="account">Account</string>
+    <string name="about">About</string>
+    <string name="others">Others</string>
+    <string name="jayson_jose"></string>
+    <string name="emailAccount"></string>
+    <string name="setting">Settings</string>
+
+    <string name="top_icon">TOP ICON</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">FORGOT PASSWORD?</string>
+    <string name="or">OR</string>
+    <string name="google_icon">google icon</string>
+    <string name="facebook_icon">facebook icon</string>
+    <string name="new_user_register_now">New User? Register Now</string>
+    <string name="already_have_an_account">Already Have an Account?</string>
+    <string name="smart_greenhouse">Smart GreenHouse</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">register</string>
+    <string name="forgot_detail">We just need your registered Email Address to sent \nyour password reset instructions</string>
+    <string name="back">BACK</string>
+    <string name="reset_password">reset Password</string>
+    <string name="registered_email">Registered Email</string>
+    <string name="logout">logout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="humidity">Humidity</string>
+    <string name="soil_moisture">Soil Moisture</string>
+    <string name="heat_index">Heat Index</string>
+    <string name="fullname">FullName</string>
+    <string name="capstone_trademark">Capstone BSIT 4A</string>
+    <string name="on">ON</string>
+    <string name="water_pump">Water Pump</string>
+    <string name="exhaust_fan">Exhaust Fan</string>
+    <string name="light_bulb">Light Bulb</string>
+    <string name="logo_name">Smart Greenhouse \nAgriculture Monitoring System</string>
+
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1041717022583",
+    "project_id": "smartgreenhouse-9da94",
+    "storage_bucket": "smartgreenhouse-9da94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041717022583:android:4b157e31b2dc2cfcea5b72",
+        "android_client_info": {
+          "package_name": "com.jaysonjose.smartgreenhouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041717022583-tkd6mgd8ndkl093akkgnhbas8acj95rh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVaMLUTPdt1IVQKI8Klx1KdmP8MFYinzc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041717022583-tkd6mgd8ndkl093akkgnhbas8acj95rh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
