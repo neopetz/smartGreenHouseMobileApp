@@ -39,7 +39,7 @@ public class homeLayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_layout);
 
-
+/*HEEEEEEEEEEEENLOOOOOOOOOOOOOOOOOOOOOOO*/
 
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
 
