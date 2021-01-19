@@ -81,7 +81,7 @@ public class StreamFragment extends Fragment {
         webSettings.setDefaultZoom(WebSettings.ZoomDensity.FAR);
         webSettings.setUseWideViewPort(true);
         webSettings.setJavaScriptEnabled(true);
-
+        visualStream.loadUrl(url);
 
         aSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
