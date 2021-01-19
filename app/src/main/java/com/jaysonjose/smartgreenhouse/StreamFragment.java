@@ -1,7 +1,9 @@
 package com.jaysonjose.smartgreenhouse;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -12,6 +14,14 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Switch;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link StreamFragment#newInstance} factory method to
@@ -20,8 +30,12 @@ import android.widget.Switch;
 public class StreamFragment extends Fragment {
 
 
-    String url = "http://192.168.254.125";
-    String url2 = "http://www.google.com";
+    String url="http://192.168.254.125";
+    String url2;
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
+
     private WebView visualStream;
     private Switch aSwitch;
 
@@ -70,9 +84,48 @@ public class StreamFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_stream,null);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
 
         visualStream = view.findViewById(R.id.visualStream);
         aSwitch = view.findViewById(R.id.switch1);
+
+
+        reference.child(userID).child("control").child("stream").child("offline_ip").addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    url = snapshot.getValue().toString();
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        reference.child(userID).child("control").child("stream").child("online_ip").addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    url2 = snapshot.getValue().toString();
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
         visualStream.setWebViewClient(new WebViewClient());
         WebSettings webSettings = visualStream.getSettings();

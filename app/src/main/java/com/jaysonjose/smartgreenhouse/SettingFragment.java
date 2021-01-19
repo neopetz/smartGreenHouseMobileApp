@@ -14,6 +14,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,7 +41,7 @@ public class SettingFragment extends Fragment {
     private String mParam2;
 
     private RadioGroup radioGroup;
-    private RadioButton radioButton,radioButton2;
+    private RadioButton radioButtonManual,radioButtonAuto;
     private TextView textViewMinFan,textViewMinPump;
     private SeekBar seekBarFan,seekBarPump;
     private Button btnSave;
@@ -48,6 +49,7 @@ public class SettingFragment extends Fragment {
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
+    private String modeRadio;
 
     public SettingFragment() {
         // Required empty public constructor
@@ -87,8 +89,8 @@ public class SettingFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_setting, null);
 
         radioGroup = view.findViewById(R.id.radioGroup);
-        radioButton = view.findViewById(R.id.radioButton);
-        radioButton2 = view.findViewById(R.id.radioButton2);
+        radioButtonManual = view.findViewById(R.id.radioButton);
+        radioButtonAuto = view.findViewById(R.id.radioButton2);
         textViewMinFan = view.findViewById(R.id.textViewMinFan);
         textViewMinPump = view.findViewById(R.id.textViewMinPump);
         seekBarPump = view.findViewById(R.id.seekBarPump);
@@ -99,12 +101,72 @@ public class SettingFragment extends Fragment {
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.radioButton:
+                         modeRadio = "manual";
+                        break;
+                    case  R.id.radioButton2:
+                         modeRadio = "automatic";
+                        break;
+
+                }
+            }
+        });
+
         getDataSetting();
         getDataFanSetting();
         getDataPumpSetting();
         btnSaveSetting();
+        seekBarProgress();
 
         return view;
+    }
+
+    private void seekBarProgress() {
+        seekBarFan.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                textViewMinFan.setText(progress+" minutes");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+
+
+
+            }
+        });
+
+        seekBarPump.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                textViewMinPump.setText(progress+" minutes");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+
+
+
+            }
+        });
     }
 
     private void btnSaveSetting() {
@@ -112,6 +174,17 @@ public class SettingFragment extends Fragment {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBarSetting.setVisibility(View.VISIBLE);
+                int valueTimeFan = seekBarFan.getProgress();
+                int valueTimePump = seekBarPump.getProgress();
+
+                reference.child(userID).child("mode").setValue(""+modeRadio);
+                reference.child(userID).child("control").child("fan").child("time").setValue(valueTimeFan);
+                reference.child(userID).child("control").child("sprinkler").child("time").setValue(valueTimePump);
+                Toast.makeText(getActivity(), "Save Successfully", Toast.LENGTH_LONG).show();
+                progressBarSetting.setVisibility(View.GONE);
+
+
 
             }
         });
@@ -165,11 +238,13 @@ public class SettingFragment extends Fragment {
                 if(snapshot.exists()){
                     String mode = snapshot.getValue().toString();
                     if(mode.equals("manual")){
-                        radioButton.setChecked(true);
-                        radioButton2.setChecked(false);
+                        modeRadio = "manual";
+                        radioButtonManual.setChecked(true);
+                        radioButtonAuto.setChecked(false);
                     }else{
-                        radioButton2.setChecked(true);
-                        radioButton.setChecked(false);
+                        radioButtonAuto.setChecked(true);
+                        radioButtonManual.setChecked(false);
+                        modeRadio = "automatic";
                     }
                 }else{
 
