@@ -50,23 +50,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view5"
-            app:layout_constraintVertical_bias="0.576" />
-
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="88dp"
-            android:layout_height="31dp"
-            android:layout_marginBottom="52dp"
-            android:text="Offline"
-            android:textColor="@color/colorPrimary"
-            app:layout_constraintBottom_toTopOf="@+id/visualStream"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            app:layout_constraintVertical_bias="1.0"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
+            app:layout_constraintVertical_bias="0.592" />
+        <!--
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="88dp"
+                    android:layout_height="31dp"
+                    android:layout_marginBottom="52dp"
+                    android:text="Offline"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintBottom_toTopOf="@+id/visualStream"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6"
+                    app:layout_constraintVertical_bias="1.0"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+        -->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

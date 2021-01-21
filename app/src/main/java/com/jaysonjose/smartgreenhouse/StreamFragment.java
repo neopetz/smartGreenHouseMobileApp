@@ -89,7 +89,9 @@ public class StreamFragment extends Fragment {
         userID = user.getUid();
 
         visualStream = view.findViewById(R.id.visualStream);
-        aSwitch = view.findViewById(R.id.switch1);
+       // aSwitch = view.findViewById(R.id.switch1);
+
+        visualStream.clearHistory();
 
 
         reference.child(userID).child("control").child("stream").child("offline_ip").addValueEventListener(new ValueEventListener() {
@@ -135,7 +137,7 @@ public class StreamFragment extends Fragment {
         webSettings.setUseWideViewPort(true);
         webSettings.setJavaScriptEnabled(true);
         visualStream.loadUrl(url);
-
+/*
         aSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,7 +151,7 @@ public class StreamFragment extends Fragment {
             }
         });
 
-
+*/
 
         return view;
     }

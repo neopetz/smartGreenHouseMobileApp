@@ -16,4 +16,9 @@
         <item name="android:progressDrawable">@drawable/circle_2</item>
     </style>
 
+    <style name="CircularDeterminateProgressBar3">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/circle_all_red</item>
+    </style>
+
 </resources>

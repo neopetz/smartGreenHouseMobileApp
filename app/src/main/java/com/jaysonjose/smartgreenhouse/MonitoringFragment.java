@@ -164,11 +164,11 @@ public class MonitoringFragment extends Fragment {
 
                // numHeat = Float.parseFloat(value.getText().toString());
                  // numHeat = 36;
-                if (progressHeat<32){
+                if (progressHeat<35){
                     text_view_progress_heat.setTextColor(Color.parseColor("#03FF0F"));
                 }
                 else if(progressHeat<36){
-                    text_view_progress_heat.setTextColor(Color.parseColor("#F8F805"));
+                   //text_view_progress_heat.setTextColor(Color.parseColor("#F8F805"));
                 }
                 else{
                     text_view_progress_heat.setTextColor(Color.parseColor("#FA0707"));
@@ -226,11 +226,11 @@ public class MonitoringFragment extends Fragment {
                     }
                 });
                  //numSoil = 18;
-                if (progressSoil<32){
+                if (progressSoil<36){
                     text_view_progress_soil.setTextColor(Color.parseColor("#03FF0F"));
                 }
                 else if(progressSoil<36){
-                    text_view_progress_soil.setTextColor(Color.parseColor("#F8F805"));
+                 //   text_view_progress_soil.setTextColor(Color.parseColor("#F8F805"));
                 }
                 else{
                     text_view_progress_soil.setTextColor(Color.parseColor("#FA0707"));
@@ -244,13 +244,14 @@ public class MonitoringFragment extends Fragment {
 
                     handlerSoil.postDelayed(this,50);
                     progressSoil++;
-                    text_view_progress_soil.setText(String.valueOf(progressSoil)+" °");
+
+                    text_view_progress_soil.setText(String.valueOf(progressSoil)+" %");
 
                 }else{
                     progress_bar_soil.setProgress(progressSoil);
 
                     handlerSoil.postDelayed(this,50);
-                    text_view_progress_soil.setText(String.valueOf(progressSoil)+" °");
+                    text_view_progress_soil.setText(String.valueOf(progressSoil)+" %");
                     if(progressSoil<=0){
                         progressSoil=0;
                     }else{
@@ -293,11 +294,11 @@ public class MonitoringFragment extends Fragment {
                     }
                 });
                // numTemp = 28;
-                if (progressTemp<32){
+                if (progressTemp<31){
                     text_view_progress_temp.setTextColor(Color.parseColor("#03FF0F"));
                 }
                 else if(progressTemp<36){
-                    text_view_progress_temp.setTextColor(Color.parseColor("#F8F805"));
+                   // text_view_progress_temp.setTextColor(Color.parseColor("#F8F805"));
                 }
                 else{
                     text_view_progress_temp.setTextColor(Color.parseColor("#FA0707"));
@@ -355,31 +356,32 @@ public class MonitoringFragment extends Fragment {
                     }
                 });
                 //numHumid = 74;
-                if (progressHumid<32){
-                    text_view_progress_humid.setTextColor(Color.parseColor("#03FF0F"));
+                if (progressHumid<62){
+                   text_view_progress_humid.setTextColor(Color.parseColor("#FA0707"));
                 }
                 else if(progressHumid<36){
-                    text_view_progress_humid.setTextColor(Color.parseColor("#F8F805"));
+                 //  text_view_progress_humid.setTextColor(Color.parseColor("#F8F805"));
                 }
                 else{
-                    text_view_progress_humid.setTextColor(Color.parseColor("#FA0707"));
+                    text_view_progress_humid.setTextColor(Color.parseColor("#03FF0F"));
                 }
                 if(progress_bar_humid.getProgress()<=numHumid){
                     if (progressHumid>=100){
                         progressHumid = 99;
+
                     }
 
                     progress_bar_humid.setProgress(progressHumid+2);
 
                     handlerTemp.postDelayed(this,50);
                     progressHumid++;
-                    text_view_progress_humid.setText(String.valueOf(progressHumid)+" °");
+                    text_view_progress_humid.setText(String.valueOf(progressHumid)+" %");
 
                 }else{
                     progress_bar_humid.setProgress(progressHumid);
 
                     handlerTemp.postDelayed(this,50);
-                    text_view_progress_humid.setText(String.valueOf(progressHumid)+" °");
+                    text_view_progress_humid.setText(String.valueOf(progressHumid)+" %");
                     if(progressHumid<=0){
                         progressHumid=0;
                     }else{

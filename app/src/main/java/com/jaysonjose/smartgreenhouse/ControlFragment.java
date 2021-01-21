@@ -198,7 +198,7 @@ public class ControlFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     String data1 = snapshot.getValue().toString();
-                    if(data1.equals("OFF")){
+                    if (data1.equals("OFF")){
 
                         text_view_progress_pump.setVisibility(View.GONE);
                         textView_pump.setVisibility(View.GONE);
@@ -206,8 +206,8 @@ public class ControlFragment extends Fragment {
                         text_view_progress_off_pump.setVisibility(View.VISIBLE);
                         textView_off_pump.setVisibility(View.VISIBLE);
                         progress_bar_off_pump.setVisibility(View.VISIBLE);
-                        progress_bar_pump.setProgress(0);
-                        progress_bar_off_pump.setProgress(0);
+                        progress_bar_pump.setProgress(100);
+                        progress_bar_off_pump.setProgress(100);
 
                     }else{
                         text_view_progress_off_pump.setVisibility(View.GONE);
@@ -314,8 +314,8 @@ public class ControlFragment extends Fragment {
                         text_view_progress_off_fan.setVisibility(View.VISIBLE);
                         textView_off_fan.setVisibility(View.VISIBLE);
                         progress_bar_off_fan.setVisibility(View.VISIBLE);
-                        progress_bar_fan.setProgress(0);
-                        progress_bar_off_fan.setProgress(0);
+                        progress_bar_fan.setProgress(100);
+                        progress_bar_off_fan.setProgress(100);
 
                     }else{
                         text_view_progress_off_fan.setVisibility(View.GONE);
@@ -386,8 +386,8 @@ public class ControlFragment extends Fragment {
                         text_view_progress_off_light.setVisibility(View.VISIBLE);
                         textView_off_light.setVisibility(View.VISIBLE);
                         progress_bar_off_light.setVisibility(View.VISIBLE);
-                        progress_bar_off_light.setProgress(0);
-                        progress_bar_light.setProgress(0);
+                        progress_bar_off_light.setProgress(100);
+                        progress_bar_light.setProgress(100);
 
 
                     } else {

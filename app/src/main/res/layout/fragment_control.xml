@@ -91,7 +91,7 @@
 
     <ProgressBar
         android:id="@+id/progress_bar_off_light"
-        style="@style/CircularDeterminateProgressBar2"
+        style="@style/CircularDeterminateProgressBar3"
         android:layout_width="178dp"
         android:layout_height="172dp"
         android:layout_marginTop="112dp"
@@ -182,7 +182,7 @@
     <!--visible***********************************************************-->
     <ProgressBar
         android:id="@+id/progress_bar_off_fan"
-        style="@style/CircularDeterminateProgressBar2"
+        style="@style/CircularDeterminateProgressBar3"
         android:layout_width="178dp"
         android:layout_height="172dp"
         android:visibility="visible"
@@ -272,7 +272,7 @@
     <!--visible***********************************************************-->
     <ProgressBar
         android:id="@+id/progress_bar_off_pump"
-        style="@style/CircularDeterminateProgressBar2"
+        style="@style/CircularDeterminateProgressBar3"
         android:layout_width="178dp"
         android:layout_height="172dp"
         android:layout_marginBottom="28dp"
